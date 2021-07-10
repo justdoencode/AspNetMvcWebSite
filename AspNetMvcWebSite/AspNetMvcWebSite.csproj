@@ -330,8 +330,9 @@
     <Content Include="Views\Shared\_PartialPageLoginHeader.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\AdminPage.cshtml" />
-    <Content Include="Views\Shared\_PartialPageAddBook.cshtml" />
+    <Content Include="Views\Shared\_PartialPageAdminProperties.cshtml" />
     <Content Include="Views\Home\AddBook.cshtml" />
+    <Content Include="Views\Home\AddBlog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

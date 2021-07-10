@@ -21,12 +21,12 @@ namespace AspNetMvcWebSite.Controllers
 
         public ActionResult Books()
         {
-            return View();
+            return View(databaseContext);
         }
 
         public ActionResult Blog()
         {
-            return View();
+            return View(databaseContext);
         }
 
 
@@ -95,15 +95,58 @@ namespace AspNetMvcWebSite.Controllers
 
 
         //Admin Section
-        public PartialViewResult AdminAddBookSection()
+        public PartialViewResult AdminPropertiesSection()
         {
-            return PartialView("_PartialPageAddBook");
+            return PartialView("_PartialPageAdminProperties");
         }
 
 
+        //Kitap Ekleme
+        [HttpGet]
         public ActionResult AddBook()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult AddBook(string bookname,string writer,string numberofpage,string category, string generalinformation, string bookimage, string price)
+        {
+            Book newBook = new Book();
+            newBook.BookName = bookname;
+            newBook.Writer = writer;
+            newBook.NumberOfPage =Convert.ToInt32(numberofpage);
+            newBook.Category = category;
+            newBook.GeneralInformation = generalinformation;
+            newBook.BookImage = bookimage;
+            newBook.Price = Convert.ToInt32(price);
+
+            databaseContext.Books.Add(newBook);
+            databaseContext.SaveChanges();
+
+
+            return View("AddBook");
+        }
+
+
+        //Blog Ekleme
+
+        [HttpGet]
+        public ActionResult AddBlog()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddBlog(string tittle,string subject,string content,string image)
+        {
+            Blog newBlog = new Blog();
+            newBlog.Tittle = tittle;
+            newBlog.Subject = subject;
+            newBlog.Content = content;
+            newBlog.Image = image;
+
+            databaseContext.Blogs.Add(newBlog);
+            databaseContext.SaveChanges();
+
+            return View("AddBlog");
         }
     }
 }

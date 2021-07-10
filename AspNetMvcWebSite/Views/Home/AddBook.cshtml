@@ -12,7 +12,7 @@
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
-                    @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                    @using (Html.BeginForm("AddBook", "Home", FormMethod.Post))
                     {
                         <div class="form-group">
                             <label for="bookname" style="color:#f07e13">KİTAP iSMİ</label><br>
@@ -34,6 +34,14 @@
                             <label for="generalinformation" style="color:#f07e13">GENEL BİLGİ</label><br>
                             @Html.TextBox("generalinformation", null, new { @class = "form-control" })
                         </div>
+                        <div class="form-group">
+                            <label for="bookimage" style="color:#f07e13">KİTAP RESMİ</label><br>
+                            @Html.TextBox("bookimage", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="price" style="color:#f07e13">FİYAT</label><br>
+                            @Html.TextBox("price", null, new { @class = "form-control" })
+                        </div>
                         <br>
                         <div class="form-group">
                             <input type="submit" class="btnSubmit" value="Ekle" />
@@ -49,6 +57,6 @@
 
 
 @section addProduct{
-    @Html.Action("AdminAddBookSection", "Home")
+    @Html.Action("AdminPropertiesSection", "Home")
 }
 

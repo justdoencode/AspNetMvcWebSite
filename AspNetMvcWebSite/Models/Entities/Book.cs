@@ -13,6 +13,8 @@ namespace AspNetMvcWebSite.Models.Entities
         public int NumberOfPage { get; set; }
         public string Category { get; set; }
         public string GeneralInformation { get; set; }
+        public string BookImage { get; set; }
+        public int Price { get; set; }
 
     }
 }

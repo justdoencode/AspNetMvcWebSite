@@ -10,6 +10,7 @@ namespace AspNetMvcWebSite.Models.Entities
         public int Id { get; set; }
         public string Tittle { get; set; }
         public string Subject { get; set; }
-        public string Content { get; set; }    
+        public string Content { get; set; }
+        public string Image { get; set; }
     }
 }
