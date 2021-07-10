@@ -1,0 +1,77 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+    <link href="~/Styles/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+</head>
+<body>
+    <!--Header-->
+    @Html.Partial("_PartialPageLoginHeader");
+
+
+    @using (Html.BeginForm())
+    {
+
+        <div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Kullanıcı Girişi</h3>
+
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <label for="email" style="color:#123451">EMAİL</label><br>
+                            @Html.TextBox("email", null, new { @class = "form-control" })
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="password" style="color:#123451">PAROLA</label><br>
+                            @Html.TextBox("password", null, new { @class = "form-control" })
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Giriş" /><br />
+                        </div>
+                    }
+
+
+
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <h3>Admin Girişi</h3>
+
+
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <label for="adminEmail" style="color:#f07e13">EMAİL</label><br>
+                            @Html.TextBox("adminEmail", null, new { @class = "form-control" })
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="adminPassword" style="color:#f07e13">PAROLA</label><br>
+                            @Html.TextBox("adminPassword", null, new { @class = "form-control" })
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Giriş" />
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+
+    <link href="~/Styles/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body style="background-color:white">
+    <!--Header-->
+    @Html.Partial("_PartialPageLoginHeader")
+
+
+    <div id="login" style="background-color: #123451">
+        <h3 class="text-center text-white pt-5" style="color: #f07e13">Kullanıcı Kaydı</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    @using (Html.BeginForm("Register","Home",FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <label for="firstname" style="color:#f07e13">İSİM</label><br>
+                            @Html.TextBox("firstName", null, new { @class="form-control"})
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname" style="color:#f07e13">SOYİSİM</label><br>
+                            @Html.TextBox("lastName", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="email" style="color:#f07e13">EMAİL</label><br>
+                            @Html.TextBox("email", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="password" style="color:#f07e13">PAROLA:</label><br>
+                            @Html.TextBox("password", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="password" style="color:#f07e13">PAROLA TEKRAR:</label><br>
+                            <input type="password" name="repeatpassword" id="repeatpassword" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Kaydol" />
+                        </div>
+                        <br />
+                    }
+                    @*<form id="login-form" class="form" action="" method="post">
+                        </form>*@
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

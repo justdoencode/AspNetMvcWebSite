@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    <div id="login" style="background-color: #123451">
+        <h3 class="text-center text-white pt-5" style="color: #f07e13">Kitap Ekle</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <label for="bookname" style="color:#f07e13">KİTAP iSMİ</label><br>
+                            @Html.TextBox("bookname", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="writer" style="color:#f07e13">YAZAR</label><br>
+                            @Html.TextBox("writer", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="numberofpage" style="color:#f07e13">SAYFA SAYISI</label><br>
+                            @Html.TextBox("numberofpage", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="category" style="color:#f07e13">KATEGORİ</label><br>
+                            @Html.TextBox("category", null, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="generalinformation" style="color:#f07e13">GENEL BİLGİ</label><br>
+                            @Html.TextBox("generalinformation", null, new { @class = "form-control" })
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Ekle" />
+                        </div>
+                        <br />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section addProduct{
+    @Html.Action("AdminAddBookSection", "Home")
+}
+
