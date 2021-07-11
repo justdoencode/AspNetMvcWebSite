@@ -1,0 +1,66 @@
+﻿@using AspNetMvcWebSite.Models.Entities
+@model Book
+
+
+@{
+    ViewBag.Title = "UpdateBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div id="login" style="background-color: #123451">
+        <h3 class="text-center text-white pt-5" style="color: #f07e13">Kitap Ekle</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.HiddenFor(b => b.Id)
+                        <div class="form-group">
+                            <label for="bookname" style="color:#f07e13">KİTAP iSMİ</label><br>
+                            @Html.LabelFor(model => model.BookName, new { @class = "form-control" })
+                            @Html.EditorFor(model => model.BookName, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="writer" style="color:#f07e13">YAZAR</label><br>
+                            @Html.LabelFor(model => model.Writer, new { @class = "form-control" })
+                            @Html.EditorFor(model => model.Writer, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="numberofpage" style="color:#f07e13">SAYFA SAYISI</label><br>
+                            @Html.LabelFor(model => model.NumberOfPage, new { @class = "form-control" })
+                            @Html.EditorFor(model => model.NumberOfPage, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="category" style="color:#f07e13">KATEGORİ</label><br>
+                            @Html.LabelFor(model => model.Category, new { @class = "form-control" })
+                            @Html.EditorFor(model => model.Category, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="generalinformation" style="color:#f07e13">GENEL BİLGİ</label><br>
+                            @Html.LabelFor(model => model.GeneralInformation, new { @class = "form-control" })
+                            @Html.EditorFor(model => model.GeneralInformation, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="bookimage" style="color:#f07e13">KİTAP RESMİ</label><br>
+                            @Html.LabelFor(model => model.BookImage, new { @class = "form-control" })
+                            @Html.EditorFor(model => model.BookImage, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="price" style="color:#f07e13">FİYAT</label><br>
+                            @Html.LabelFor(model => model.Price, new { @class = "form-control" })
+                            @Html.EditorFor(model => model.Price, new { @class = "form-control" })
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Güncelle" />
+                        </div>
+                        <br />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

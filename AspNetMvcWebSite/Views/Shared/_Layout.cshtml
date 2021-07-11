@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="~/Styles/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/Styles/css/templatemo.css">
     <link rel="stylesheet" href="~/Styles/css/custom.css">
+    <link rel="stylesheet" href="~/Styles/css/menu.css">
+
+    @*<link rel="stylesheet" href="~/Styles/bootstrap/bootstrap.css">*@
+    <link rel="stylesheet" href="~/Styles/css/misc.css">
+    <link rel="stylesheet" href="~/Styles/css/green-scheme.css">
+
+    @*<script src="~/Styles/js/jquery-1.10.2.min.js"></script>
+        <script src="~/Styles/js/jquery-migrate-1.2.1.min.js"></script>*@
 
     @*icons*@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
@@ -34,35 +42,28 @@
             </button>
 
             <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
-                <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Home/Index">ANASAYFA</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Home/Books">KİTAPLAR</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Home/Blog">BLOG</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Home/Login">ÇIKIŞ</a>
-                        </li>
-                        @RenderSection("addProduct",false)
-                    </ul>
-                </div>
-                <div class="navbar align-self-center d-flex">
 
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-                    </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
-                    </a>
-                </div>
+                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Index">ANASAYFA</a>
+                    </li>
+                    <li></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Books">KİTAPLAR</a>
+                    </li>
+                    <li></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Blog">BLOG</a>
+                    </li>
+                    <li></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Login">ÇIKIŞ</a>
+                    </li>
+                    <li><h1> </h1></li>
+                    @RenderSection("addProduct", false)
+                </ul>
+
+
             </div>
 
         </div>

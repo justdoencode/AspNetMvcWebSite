@@ -1,0 +1,63 @@
+﻿@using AspNetMvcWebSite.Models.Entities
+@model Book
+
+@{
+    ViewBag.Title = "BlogSingle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+
+<div class="container pb-5">
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div class="col-lg-7 mt-7">
+            <div class="card mb-3">
+                <img class="card-img img-fluid" src="@Model.BookImage" alt="Card image cap" id="product-detail">
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h1 class="h2">@Model.BookName</h1>
+                    <p class="h3 py-2">@Model.Price.00 TL</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <h6>Yazar:</h6>
+                        </li>
+                        <li class="list-inline-item">
+                            <p class="text-muted"><strong>@Model.Writer</strong></p>
+                        </li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <h6>Sayfa Sayısı:</h6>
+                        </li>
+                        <li class="list-inline-item">
+                            <p class="text-muted"><strong>@Model.NumberOfPage</strong></p>
+                        </li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <h6>Kategori:</h6>
+                        </li>
+                        <li class="list-inline-item">
+                            <p class="text-muted"><strong>@Model.Category</strong></p>
+                        </li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <h6>Genel Bilgi:</h6>
+                        </li>
+                        <li class="list-inline-item">
+                            <p class="text-muted"><strong>@Model.GeneralInformation</strong></p>
+                        </li>
+                    </ul>
+                    <form action="" method="GET">
+                        <input type="hidden" name="product-title" value="Activewear">
+                        <div class="row pb-3">
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

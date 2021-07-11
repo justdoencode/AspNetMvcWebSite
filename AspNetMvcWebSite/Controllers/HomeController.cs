@@ -16,7 +16,7 @@ namespace AspNetMvcWebSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View(databaseContext);
         }
 
         public ActionResult Books()
@@ -147,6 +147,62 @@ namespace AspNetMvcWebSite.Controllers
             databaseContext.SaveChanges();
 
             return View("AddBlog");
+        }
+
+
+        public ActionResult BookSingle(int id)
+        {
+
+            Book _book = databaseContext.Books.Find(id);
+            return View(_book);
+        }
+
+
+        public ActionResult BlogSingle(int id)
+        {
+            Blog _blog = databaseContext.Blogs.Find(id);
+
+            return View(_blog);
+        }
+
+        [HttpGet]
+        public ActionResult EditBook()
+        {
+            return View(databaseContext);
+        }
+
+        [HttpPost]
+        public ActionResult EditBook(Book book)
+        {
+            Book _deleteBook = databaseContext.Books.Where(i => i.Id == book.Id).FirstOrDefault();
+            databaseContext.Books.Remove(_deleteBook);
+            databaseContext.SaveChanges();
+
+            return View("EditBook",databaseContext);
+        }
+
+        
+        public ActionResult UpdateBook(int id)
+        {
+            Book _book = databaseContext.Books.Find(id);
+
+            return View(_book);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateBook(Book book)
+        {
+            Book _book = databaseContext.Books.Where(b => b.Id == book.Id).FirstOrDefault();
+            _book.BookName = book.BookName;
+            _book.BookImage = book.BookImage;
+            _book.Category = book.Category;
+            _book.GeneralInformation = book.GeneralInformation;
+            _book.NumberOfPage = book.NumberOfPage;
+            _book.Price = book.Price;
+            _book.Writer = book.Writer;
+            databaseContext.SaveChanges();
+
+            return View("EditBook", databaseContext);
         }
     }
 }
